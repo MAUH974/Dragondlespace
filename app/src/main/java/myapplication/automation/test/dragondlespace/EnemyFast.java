@@ -63,7 +63,6 @@ public class EnemyFast {
             Log.d("Screen Width", Float.toString(GameActivity.deviceWidth));
             Log.d("Screen Height", Float.toString(GameActivity.deviceHeight));
         }
-
         hitbox = new Rect((int) positionFast.left+2, (int) positionFast.top, (int) positionFast.right, (int) positionFast.bottom);
 
     }

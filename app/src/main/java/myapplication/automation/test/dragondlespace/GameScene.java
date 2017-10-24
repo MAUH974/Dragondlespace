@@ -7,11 +7,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.media.MediaPlayer;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import static myapplication.automation.test.dragondlespace.GameActivity.mp;
 
 public class GameScene extends SurfaceView implements Runnable {
 
@@ -46,6 +49,7 @@ public class GameScene extends SurfaceView implements Runnable {
         life = new Life(context);
         jeanMarc = new JeanMarc(context);
         createEnemies();
+
     }
 
     @Override
@@ -179,7 +183,7 @@ public class GameScene extends SurfaceView implements Runnable {
 
 
         if (hitDetected) {
-            // TODO SOUND HIT
+
             // TODO invincible
             --GameActivity.lives;
 
@@ -193,11 +197,14 @@ public class GameScene extends SurfaceView implements Runnable {
             }
             else{
                 timeOfDeath = System.currentTimeMillis();
+                mp.start();
+                // TODO SOUND HIT
             }
             //long curTime = System.currentTimeMillis();
             //--GameActivity.lives;
             if (GameActivity.lives <= 0) {
                 // TODO SOUND LOST
+
                 // TODO gameEnded = true;
 
                 running = false;

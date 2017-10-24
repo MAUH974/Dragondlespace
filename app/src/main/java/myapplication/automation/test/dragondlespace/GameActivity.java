@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,8 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
     private long lastUpdate = 0;
     private static final int SHAKE_THRESHOLD = 600;
     public static float zPosition, last_zPosition;
+
+    public static MediaPlayer mp;
 
 
 
@@ -53,6 +56,7 @@ public class GameActivity extends AppCompatActivity implements SensorEventListen
 
 
         Log.d("x y z contienne:", "");
+        mp = MediaPlayer.create(this, R.raw.sound);
 
 
 
