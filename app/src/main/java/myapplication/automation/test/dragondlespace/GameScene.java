@@ -204,7 +204,6 @@ public class GameScene extends SurfaceView implements Runnable {
             //--GameActivity.lives;
             if (GameActivity.lives <= 0) {
                 // TODO SOUND LOST
-
                 // TODO gameEnded = true;
 
                 running = false;
